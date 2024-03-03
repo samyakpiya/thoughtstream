@@ -4,9 +4,9 @@ import ButtonSvg from "../assets/svg/ButtonSvg";
 type ButtonProps = {
   className?: string;
   href?: string;
-  onClick?: () => {};
+  onClick?: () => void;
   children?: ReactNode;
-  px?: number;
+  px?: string;
   white?: boolean;
 };
 
@@ -25,7 +25,7 @@ function Button({
   const spanClasses = `relative z-10`;
 
   const renderButton = () => (
-    <button className={classes}>
+    <button className={classes} onClick={onClick}>
       <span className={spanClasses}>{children}</span>
       {ButtonSvg(white || false)}
     </button>
